@@ -190,7 +190,7 @@ public class FastSearchActivity extends BaseVbActivity<ActivityFastSearchBinding
                         if (searchExecutorService != null) {
                             pauseRunnable = searchExecutorService.shutdownNow();
                             searchExecutorService = null;
-                            JSEngine.getInstance().stopAll();
+                             JsLoader.load();
                         }
                     } catch (Throwable th) {
                         th.printStackTrace();
