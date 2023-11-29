@@ -139,7 +139,7 @@ public class SearchActivity extends BaseActivity {
                         if (searchExecutorService != null) {
                             pauseRunnable = searchExecutorService.shutdownNow();
                             searchExecutorService = null;
-                            JSEngine.getInstance().stopAll();
+                             JsLoader.load();
                         }
                     } catch (Throwable th) {
                         th.printStackTrace();
@@ -341,7 +341,7 @@ public class SearchActivity extends BaseActivity {
             if (searchExecutorService != null) {
                 searchExecutorService.shutdownNow();
                 searchExecutorService = null;
-                JSEngine.getInstance().stopAll();
+                 JsLoader.load();
             }
         } catch (Throwable th) {
             th.printStackTrace();
@@ -430,7 +430,7 @@ public class SearchActivity extends BaseActivity {
             if (searchExecutorService != null) {
                 searchExecutorService.shutdownNow();
                 searchExecutorService = null;
-                JSEngine.getInstance().stopAll();
+                 JsLoader.load();
             }
         } catch (Throwable th) {
             th.printStackTrace();
