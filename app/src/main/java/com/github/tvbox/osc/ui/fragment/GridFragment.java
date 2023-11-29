@@ -95,7 +95,7 @@ public class GridFragment extends BaseLazyFragment {
         initViewModel();
         initData();
     }
-    //public boolean isFolederMode(){ return (getUITag() =='1'); }
+    public boolean isFolederMode(){ return (getUITag() =='1'); }
     // 获取当前页面UI的显示模式 ‘0’ 正常模式 '1' 文件夹模式 '2' 显示缩略图的文件夹模式
     public char getUITag(){
         System.out.println(sortData);
@@ -151,7 +151,7 @@ public class GridFragment extends BaseLazyFragment {
             mGridView.setVisibility(View.VISIBLE);
         }
         mGridView.setHasFixedSize(true);
-        gridAdapter = new GridAdapter();
+        gridAdapter = new GridAdapter(isFolederMode());
         this.page =1;
         this.maxPage =1;
         this.isLoad = false;
